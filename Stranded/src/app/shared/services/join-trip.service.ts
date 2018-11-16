@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class DisruptionsService {
+export class JoinTripService {
 
   constructor() { }
+
+  post() {}
 }

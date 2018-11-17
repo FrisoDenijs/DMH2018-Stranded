@@ -1,3 +1,9 @@
+<div class="bicycle-text" *ngIf="bicyclesAvailable">
+  There are OV bicycles available!<br/>
+  <div *ngFor="let loc of bicyclesLocations" style="clear: both">
+    {{loc.name}} ({{loc.bikes}} available)<br/><br/>
+  </div>
+</div>
 
 <div class="container">
   <button *ngFor="let trip of trips" class="trip-item" (click)="showJoin(trip)">

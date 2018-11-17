@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { TripService, TravelTimeService } from '../../shared/services';
-import { GetTripRequest, TripModel, TravelTimeRequest } from '../../shared/models';
+import {TripService, TravelTimeService, StationInfoService} from '../../shared/services';
+import {GetTripRequest, TripModel, TravelTimeRequest, Location, InfoLocationModel} from '../../shared/models';
 
 @Component({
   selector: 'app-find-trip',
@@ -17,15 +17,29 @@ export class FindTripComponent implements OnInit {
 
   public trips: TripModel[];
   public travelTime: number;
+  public bicyclesAvailable: boolean;
+  public bicyclesLocations: InfoLocationModel[];
 
   public showTripId = -1;
 
-  constructor(private tripService: TripService, private travelTimeService: TravelTimeService) { }
+  constructor(private tripService: TripService, private travelTimeService: TravelTimeService, private stationInfoService: StationInfoService) { }
 
   ngOnInit() {
+
+    // testing
+    if (!this.from) {
+      this.from = 'Leiden Centraal';
+      this.to = 'Schiphol';
+    }
+
     const tripReq = new GetTripRequest();
-    tripReq.from = !!this.from ? this.from : 'Leiden Centraal';
-    tripReq.to = !!this.to ? this.to : 'Schiphol';
+    tripReq.from = this.from;
+    tripReq.to = this.to;
+
+
+    const timeReq = new TravelTimeRequest();
+    timeReq.from = this.from;
+    timeReq.to = this.to;
 
     this.tripService.get(tripReq).subscribe(res => {
       for (const trip of res) {
@@ -47,9 +61,12 @@ export class FindTripComponent implements OnInit {
       });
     });
 
-    const timeReq = new TravelTimeRequest();
-    timeReq.from = !!this.from ? this.from : 'Leiden Centraal';
-    timeReq.to = !!this.to ? this.to : 'Schiphol';
+    this.stationInfoService.get(this.from).subscribe(res => {
+      if (res.ovfiets) {
+        this.bicyclesAvailable = true;
+        this.bicyclesLocations = res.locations;
+      }
+    });
   }
 
   showJoin(trip: TripModel) {

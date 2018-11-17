@@ -7,21 +7,45 @@ agm-map {
 .home-container {
   width: 100%;
   height: 100%;
-  // background-color: red;
   position: absolute;
   padding: 0px 20px;
   top: 0px;
+  // background-color: rgba(0,0,0,0.2);
 }
 
-.home-input {
+.home-input-from {
   width: 100%;
   float: none;
   margin: 0 auto;
   display: block;
   margin-top: 120px;
-  padding: 10px 20px;
+  padding: 0px 20px;
+  height: 50px;
   font-size: 15px;
   text-transform: capitalize;
+  color: #0b317e;
+  font-weight: 400;
+}
+
+.home-input-to {
+  width: 100%;
+  float: none;
+  margin: 0 auto;
+  display: block;
+  // margin-top: 1px;
+  padding: 0px 20px;
+  height: 50px;
+  font-size: 15px;
+  text-transform: capitalize;
+  color: #0b317e;
+  font-weight: 400;
+  border-width: 1px 0px 0px 0px;
+  border-color: #fafafa;
+  border-style: solid;
+}
+
+.home-input-to::placeholder {
+  color: #bababa;
 }
 
 .home-station-box {
@@ -39,10 +63,12 @@ agm-map {
   padding: 0px 20px;
   background-color: white;
   border-style: solid;
-  border-width: 0px;
+  border-width: 1px 0px 0px 0px;
+  border-color: #fafafa;
 }
 
 .home-station-font {
   margin: 0;
   line-height: 50px;
 }
+

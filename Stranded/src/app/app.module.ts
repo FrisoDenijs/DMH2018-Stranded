@@ -5,15 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AcceptJoinService, DisruptionsService, JoinTripService, TripService } from './shared/services';
+import { TestServicesComponent } from './test-services/test-services.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HttpClientModule,
+    TestServicesComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
   ],
   providers: [
     AcceptJoinService,

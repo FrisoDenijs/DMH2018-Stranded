@@ -404,5 +404,6 @@ export class HomeComponent implements OnInit {
 
     suggestionClick(suggestion) {
         this.input = suggestion;
+        this.stationTo.emit(suggestion);
     }
 }

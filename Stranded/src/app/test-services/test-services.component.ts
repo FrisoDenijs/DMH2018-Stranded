@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DisruptionsService, TripService } from '../shared/services';
-import { GetTripRequest } from '../shared/models';
+import { GetTripRequest, PostTripRequest } from '../shared/models';
 
 @Component({
   selector: 'app-test-services',
@@ -29,6 +29,20 @@ export class TestServicesComponent implements OnInit {
     req.from = 'Amsterdam';
 
     this.tripService.get(req).subscribe(res => {
+      console.log(res);
+    });
+  }
+
+  public postTrip() {
+    const req = new PostTripRequest();
+    req.to = 'Delft';
+    req.from = 'Breda';
+    req.age = 42;
+    req.gender = 'man';
+    req.seats = 1;
+    req.name = 'John Lennon';
+
+    this.tripService.post(req).subscribe(res => {
       console.log(res);
     });
   }

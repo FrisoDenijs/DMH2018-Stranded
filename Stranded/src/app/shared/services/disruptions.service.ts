@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { GetDisruptionResponse } from '../models/responses/get-disruptions.response';
 import { HttpClient } from '@angular/common/http';
+import {DisruptionModel} from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class DisruptionsService {
 
   constructor(private http: HttpClient) { }
 
-  get(): Observable<GetDisruptionResponse> {
-    return this.http.get<GetDisruptionResponse>(this.disruptionUrl);
+  get(): Observable<DisruptionModel[]> {
+    return this.http.get<DisruptionModel[]>(this.disruptionUrl);
   }
 }

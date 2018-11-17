@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DisruptionsService, TripService, JoinTripService } from '../shared/services';
-import { GetTripRequest, PostTripRequest, PostJoinTripRequest, GetJoinTripRequest } from '../shared/models';
+import { DisruptionsService, TripService, JoinTripService, AcceptJoinService } from '../shared/services';
+import { GetTripRequest, PostTripRequest, PostJoinTripRequest, GetJoinTripRequest, PostAcceptJoinRequest } from '../shared/models';
 
 @Component({
   selector: 'app-test-services',
@@ -12,7 +12,7 @@ export class TestServicesComponent implements OnInit {
   public data: any;
 
   constructor(private disruptionService: DisruptionsService, private tripService: TripService,
-    private joinTripService: JoinTripService) { }
+    private joinTripService: JoinTripService, private acceptJoinService: AcceptJoinService) { }
 
   ngOnInit() {
   }
@@ -69,4 +69,12 @@ export class TestServicesComponent implements OnInit {
     });
   }
 
+  public postAcceptJoin() {
+    const req = new PostAcceptJoinRequest();
+    req.joinId = 1;
+
+    this.acceptJoinService.post(req).subscribe(res => {
+      console.log(res);
+    });
+  }
 }

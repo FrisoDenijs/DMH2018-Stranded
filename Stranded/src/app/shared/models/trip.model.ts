@@ -1,7 +1,12 @@
 export class TripModel {
-    public id: number;
-    public availableSeats: number;
-    public name: string;
-    public gender: string;
-    public age: number;
+    id: number;
+    seats: number;
+    to: string;
+    from: string;
+    name: string;
+    gender: string;
+    age: number;
+    start_time: Date;
+    status: string;
+    type: string;
 }

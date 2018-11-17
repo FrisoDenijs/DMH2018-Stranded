@@ -12,12 +12,14 @@ import { AcceptJoinService, DisruptionsService,
 
 import { HeaderComponent } from './components/header/header.component';
 import { AgmCoreModule } from '@agm/core';
+import { FindTripComponent } from './components/find-trip/find-trip.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    FindTripComponent
   ],
   imports: [
     BrowserModule,

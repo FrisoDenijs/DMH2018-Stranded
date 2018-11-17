@@ -15,9 +15,6 @@ export class FindTripComponent implements OnInit {
   @Input()
   public to: string;
 
-  @Output()
-  public joinTrip = new EventEmitter<TripModel>();
-
   public trips: TripModel[];
   public travelTime: number;
 
@@ -53,10 +50,6 @@ export class FindTripComponent implements OnInit {
     const timeReq = new TravelTimeRequest();
     timeReq.from = !!this.from ? this.from : 'Leiden Centraal';
     timeReq.to = !!this.to ? this.to : 'Schiphol';
-  }
-
-  onJoinTrip(trip: TripModel) {
-    this.joinTrip.emit(trip);
   }
 
   showJoin(trip: TripModel) {

@@ -13,6 +13,7 @@ export class JoinTripComponent implements OnInit {
   public header: string;
   public offeredBy: string;
   public fellowTravelers: JoinTripModel[];
+  public showApplyToJoin = false;
 
   @Input()
   public trip: TripModel;
@@ -33,6 +34,6 @@ export class JoinTripComponent implements OnInit {
   }
 
   onJoinTrip() {
-    this.joinTrip.emit(this.trip);
+    this.showApplyToJoin = true;
   }
 }

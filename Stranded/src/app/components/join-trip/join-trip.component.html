@@ -13,7 +13,8 @@
       </li>
     </ul>
   </div>
-  <button (click)="onJoinTrip()">
+  <button (click)="onJoinTrip()" *ngIf="!showApplyToJoin">
     Join
   </button>
+  <app-apply-to-trip *ngIf="showApplyToJoin" [trip]="trip"></app-apply-to-trip>
 </div>

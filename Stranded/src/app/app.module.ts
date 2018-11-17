@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { AcceptJoinService, DisruptionsService, JoinTripService, TripService } from './shared/services';
+import { AcceptJoinService, DisruptionsService, JoinTripService, TripService, BarsService } from './shared/services';
 import { TestServicesComponent } from './test-services/test-services.component';
 
 @NgModule({
@@ -21,7 +21,8 @@ import { TestServicesComponent } from './test-services/test-services.component';
     AcceptJoinService,
     DisruptionsService,
     JoinTripService,
-    TripService
+    TripService,
+    BarsService
   ],
   bootstrap: [AppComponent]
 })

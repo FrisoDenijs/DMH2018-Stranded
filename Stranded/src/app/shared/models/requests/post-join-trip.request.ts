@@ -1,4 +1,4 @@
-export class JoinTripRequest {
+export class PostJoinTripRequest {
     public tripId: number;
     public name: string;
     public gender: string;

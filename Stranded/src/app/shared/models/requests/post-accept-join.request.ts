@@ -1,3 +1,3 @@
-export class AcceptJoinRequest {
+export class PostAcceptJoinRequest {
     public joinId: Number;
 }

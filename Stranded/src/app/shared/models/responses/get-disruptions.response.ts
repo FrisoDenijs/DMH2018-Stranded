@@ -1,5 +1,5 @@
 import { DisruptionModel } from '../disruption.model';
 
-export class GetDisruptionModels {
+export class GetDisruptionResponse {
     public disruptions: DisruptionModel[];
 }

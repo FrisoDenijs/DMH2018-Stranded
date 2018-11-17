@@ -16,6 +16,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { AgmCoreModule } from '@agm/core';
 import { FindTripComponent } from './components/find-trip/find-trip.component';
 import { IntroComponent } from './components/intro/intro.component';
+import { JoinTripComponent } from './components/join-trip/join-trip.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { IntroComponent } from './components/intro/intro.component';
     HeaderComponent,
     IntroComponent,
     FindTripComponent,
-    HeaderComponent
+    HeaderComponent,
+    JoinTripComponent
   ],
   imports: [
     BrowserModule,

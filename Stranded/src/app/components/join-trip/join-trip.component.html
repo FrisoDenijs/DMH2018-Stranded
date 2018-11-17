@@ -1,0 +1,19 @@
+<div>
+  <div>
+    {{ header }} offered by <span> {{ trip?.name }} ({{ trip?.gender }}), {{trip?.age}}</span>
+  </div>
+  <div>
+    Fellow travelers
+    <ul>
+      <li *ngFor="let traveler of fellowTravelers">
+        <div>
+          {{ traveler?.name }}, {{traveler?.age}}
+          {{ traveler?.gender }}
+        </div>
+      </li>
+    </ul>
+  </div>
+  <button (click)="onJoinTrip()">
+    Join
+  </button>
+</div>

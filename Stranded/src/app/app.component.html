@@ -1,7 +1,5 @@
 
 <app-header *ngIf="showHeader"></app-header>
 <app-intro (click)="clickIntro()" *ngIf="showIntro"></app-intro>
-<!-- <app-home *ngIf="true" (toStationListener($event))></app-home> -->
 <app-home *ngIf="showHome"></app-home>
-
-<!-- <app-find-trip *ngIf="showFindTrip" [to]="toStation"></app-find-trip> -->
+<app-find-trip *ngIf="showFindTrip" [to]="toStation"></app-find-trip>

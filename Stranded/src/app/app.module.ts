@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { AcceptJoinService, DisruptionsService, JoinTripService, TripService } from './shared/services';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,12 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    AcceptJoinService,
+    DisruptionsService,
+    JoinTripService,
+    TripService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

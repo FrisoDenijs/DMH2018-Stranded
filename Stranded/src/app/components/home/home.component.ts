@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { StationListService } from '../../shared/services/station-list.service';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-
-  lat = 52.3702157;
-  lng = 4.8951679;
-  mapStyle = [
+    mapStyle = [
     {
         'featureType': 'all',
         'elementType': 'labels',
@@ -362,12 +360,36 @@ export class HomeComponent implements OnInit {
             }
         ]
     }
-  ];
+    ];
 
-  constructor() {
-  }
+    stations;
+    suggestions = [];
+    input;
+    lat = 52.16611099;
+    lng = 4.481666565;
 
-  ngOnInit() {
-  }
+    constructor(private stationListService: StationListService) {
+    }
 
+     ngOnInit() {
+        this.stationListService.get().subscribe(res => {
+        this.stations = res;
+      });
+    }
+
+    search(event) {
+        this.suggestions = [];
+        length = this.input.length;
+        for (let i = 0; i < this.stations.length; i++) {
+            if (this.input.toLowerCase() === this.stations[i].toLowerCase().slice(0, length)) {
+                console.log(this.input);
+                if (this.suggestions.length < 8) {
+                    this.suggestions.push(this.stations[i]);
+                }
+            }
+        }
+        if (length === 0) {
+            this.suggestions = [];
+        }
+    }
 }

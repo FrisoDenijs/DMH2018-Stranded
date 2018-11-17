@@ -3,10 +3,10 @@
 </agm-map>
 
 <div class="home-container">
-    <input type="text" class="home-input">
+    <input [(ngModel)]="input" (keyup)="search($event)" type="text" class="home-input">
     <div class="home-station-box">
-        <div class="home-station">
-            <h3>Mockdata</h3>
+        <div *ngFor="let suggestion of suggestions" class="home-station">
+            <h3 class="home-station-font">{{suggestion}}</h3>
         </div>
     </div>
 </div>

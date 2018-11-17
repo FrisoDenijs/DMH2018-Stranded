@@ -3,12 +3,14 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+// import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AcceptJoinService, DisruptionsService,
   JoinTripService, TripService, BarsService,
   TravelTimeService, StationInfoService, StationListService } from './shared/services';
+
 
 import { HeaderComponent } from './components/header/header.component';
 import { AgmCoreModule } from '@agm/core';

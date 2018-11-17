@@ -26,8 +26,11 @@ export class FindTripComponent implements OnInit {
     tripReq.to = !!this.to ? this.to : 'Schiphol';
 
     this.tripService.get(tripReq).subscribe(res => {
-      console.log(res);
-      this.trips = res.trips;
+      for (const trip of res) {
+        trip.start_date = new Date(trip.start_time);
+      }
+
+      this.trips = res;
     });
 
     const timeReq = new TravelTimeRequest();
@@ -38,6 +41,13 @@ export class FindTripComponent implements OnInit {
     this.travelTimeService.get(timeReq).subscribe(res => {
       console.log(res);
       this.travelTime = res.travelTimeInSeconds;
+
+      // set end times
+      for (const trip of this.trips) {
+        const endDate = new Date(trip.start_time);
+        endDate.setSeconds(endDate.getSeconds() + res.travelTimeInSeconds);
+        trip.end_date = endDate;
+      }
     });
   }
 

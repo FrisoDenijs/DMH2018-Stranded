@@ -2,10 +2,11 @@
     <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
 </agm-map>
 
-<div class="home-container">
-    <input [(ngModel)]="input" (keyup)="search($event)" type="text" class="home-input">
+<div (click)="hideSuggestions()" class="home-container">
+    <input value="Leiden Centraal" type="text" class="home-input-from" readonly>
+    <input [(ngModel)]="input" (keyup)="search($event)" type="text" class="home-input-to" placeholder="End Location"> 
     <div class="home-station-box">
-        <div *ngFor="let suggestion of suggestions" class="home-station">
+        <div *ngFor="let suggestion of suggestions" (click)="suggestionClick(suggestion)" class="home-station">
             <h3 class="home-station-font">{{suggestion}}</h3>
         </div>
     </div>

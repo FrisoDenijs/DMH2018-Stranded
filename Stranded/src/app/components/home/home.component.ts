@@ -385,7 +385,6 @@ export class HomeComponent implements OnInit {
         length = this.input.length;
         for (let i = 0; i < this.stations.length; i++) {
             if (this.input.toLowerCase() === this.stations[i].toLowerCase().slice(0, length)) {
-                console.log(this.input);
                 if (this.suggestions.length < 8) {
                     this.suggestions.push(this.stations[i]);
                 }
@@ -397,5 +396,13 @@ export class HomeComponent implements OnInit {
         if (this.stations.includes(this.input)) {
             this.stationTo.emit(this.input);
         }
+    }
+
+    hideSuggestions() {
+        this.suggestions = [];
+    }
+
+    suggestionClick(suggestion) {
+        this.input = suggestion;
     }
 }

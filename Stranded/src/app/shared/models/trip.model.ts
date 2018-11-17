@@ -6,7 +6,11 @@ export class TripModel {
     name: string;
     gender: string;
     age: number;
-    start_time: Date;
+    start_time: string;
     status: string;
     type: string;
+
+    // locally computed
+    start_date: Date;
+    end_date: Date;
 }

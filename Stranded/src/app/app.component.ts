@@ -8,6 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Stranded';
 
+  toStation: string;
+
   showHome = false;
   showFindTrip = false;
+
+  toStationListener(station: string) {
+    this.toStation = station;
+    this.showHome = false;
+    this.showFindTrip = true;
+  }
 }

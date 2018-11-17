@@ -1,0 +1,124 @@
+.header-top {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 1000;
+}
+
+.header-menu-box {
+    width: 60px;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.header-menu {
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    line-height: 60px;
+    background-image: url("../../../assets/images/menu1.png");
+    background-size: cover;
+}
+
+.header-left {
+    position: absolute;
+    top: 0;
+    width: 75%;
+    height: 100%;
+    background-color: white;
+    position: fixed;
+    z-index: 1000;
+}
+
+.header-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    z-index: 1000;
+}
+
+.header-info-box {
+    width: 100%;
+    height: 180px;
+    background-color: #222222;
+}
+
+.header-nav-box {
+    width: 100%;
+    height: auto;
+}
+
+.header-nav-ul {
+    width: 100%;
+    height: auto;
+    padding: 10px 0px;
+}
+
+.header-nav-li {
+    width: 100%;
+    height: auto;
+    padding: 20px 30px;
+}
+
+.header-info-extra {
+    width: 100%;
+    height: 80px;
+    padding: 0px 0px 0px 30px;
+}
+
+.header-info-profile {
+    width: 100%;
+    height: 100px;
+}
+
+.header-info-picture-box {
+    width: 100px;
+    height: 100%;
+    padding: 25px 0px 0px 25px;
+}
+
+.header-info-picture {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://img2.thejournal.ie/inline/2470754/original/?width=428&version=2470754");
+    background-size: cover;
+    border-radius: 100%;
+}
+
+.header-info-name {
+    width: auto;
+    height: 60%;
+    padding: 0px 20px;
+}
+
+.header-info-rate {
+    width: auto;
+    height: 40%;
+    padding: 0px 20px;
+}
+
+.header-info-name-font {
+    font-size: 25px;
+    font-weight: 400;
+    color: white;
+    line-height: 90px;
+}
+
+.header-info-rate-font {
+    font-size: 12px;
+    font-weight: 300;
+    color: white;
+    line-height: 35px;
+}
+
+.header-info-extra-font {
+    font-size: 15px;
+    font-weight: 300;
+    color: white;
+    line-height: 80px;
+}

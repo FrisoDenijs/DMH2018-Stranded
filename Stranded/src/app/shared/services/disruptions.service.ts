@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { GetDisruptionResponse } from '../models';
+import { GetDisruptionResponse } from '../models/responses/get-disruptions.response';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

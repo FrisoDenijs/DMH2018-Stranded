@@ -1,0 +1,78 @@
+$grid-style: solid;
+$grid-color: #000000;
+$grid-shadow: 0;
+$grid-width: 0px;
+
+$size1-min: 0px;
+$size1-max: 529px;
+
+$size2-min: 530px;
+$size2-max: 727px;
+
+$size3-min: 728px;
+$size3-max: 999px;
+
+$size4-min: 1000px;
+$size4-max: 1399px;
+
+$size5-min: 1400px;
+$size5-max: 10000px;
+
+div {
+  float: left;
+  width: auto;
+  height: auto;
+  border-style: $grid-style;
+  border-width: $grid-width;
+  border-color: $grid-color;
+  @if $grid-shadow == 1 {
+    -webkit-box-shadow: inset 0px 0px 0px 1px $grid-color;
+    -moz-box-shadow: inset 0px 0px 0px 1px $grid-color;
+    box-shadow: inset 0px 0px 0px 1px $grid-color;
+  }
+}
+
+// @media only screen and (min-width: $size1-min) and (max-width: $size1-max){
+//   .responsive {
+//     height: auto;
+//     margin: auto;
+//     float: none;
+//     width: 100%;
+//   }
+// }
+//
+// @media only screen and (min-width: $size2-min) and (max-width: $size2-max){
+//   .responsive {
+//     height: auto;
+//     margin: auto;
+//     float: none;
+//     width: 75%;
+//   }
+// }
+//
+// @media only screen and (min-width: $size3-min) and (max-width: $size3-max){
+//   .responsive {
+//     height: auto;
+//     margin: auto;
+//     float: none;
+//     width: 50%;
+//   }
+// }
+//
+// @media only screen and (min-width: $size4-min) and (max-width: $size4-max){
+//   .responsive {
+//     height: auto;
+//     margin: auto;
+//     float: none;
+//     width: 80%;
+//   }
+// }
+//
+// @media only screen and (min-width: $size5-min) and (max-width: $size5-max){
+//   .responsive {
+//     height: auto;
+//     margin: auto;
+//     float: none;
+//     width: 70%;
+//   }
+// }

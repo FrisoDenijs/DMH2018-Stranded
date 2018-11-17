@@ -1,0 +1,44 @@
+<div *ngIf="!headerOpen"  class="header-top">
+  <div class="header-menu-box">
+    <div (click)="openHeader()" class="header-menu"></div>
+  </div>
+</div>
+
+<div *ngIf="headerOpen" class="header-left">
+  <div class="header-info-box">
+
+    <div class="header-info-profile">
+
+      <div class="header-info-picture-box">
+        <div class="header-info-picture"></div>
+      </div>
+
+      <div class="header-info-name">
+        <h2 class="header-info-name-font">Cheston</h2>
+      </div>
+
+      <div class="header-info-rate">
+        <h3 class="header-info-rate-font">4,85 ★</h3>
+      </div>
+
+    </div>
+
+    <div class="header-info-extra">
+        <h1 class="header-info-extra-font"> ➤ &nbsp; Amsterdam Central Station</h1>
+    </div>
+  </div>
+  <div class="header-nav-box">
+    <ul class="header-nav-ul">
+      <li class="header-nav-li">Payment</li>
+      <li class="header-nav-li">Your Trips</li>
+      <li class="header-nav-li">Help</li>
+      <li class="header-nav-li">Free Rides</li>
+      <li class="header-nav-li">Settings</li>
+    </ul>
+  </div>
+</div>
+
+
+<div (click)="closeHeader()" *ngIf="headerOpen" class="header-right">
+  
+</div>

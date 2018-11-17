@@ -10,9 +10,9 @@ export class AppComponent {
 
   toStation: string;
 
-  showIntro = true;
+  showIntro = false;
   showHome = false;
-  showFindTrip = false;
+  showFindTrip = true;
 
   toHome() {
     this.showIntro = false;

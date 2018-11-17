@@ -10,6 +10,6 @@ export class AcceptJoinService {
   constructor() { }
 
   post(req: PostAcceptJoinRequest): Observable<any> {
-    return of<undefined>();
+    return of<any>();
   }
 }

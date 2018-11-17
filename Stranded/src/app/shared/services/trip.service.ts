@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PostTripRequest, PostTripResponse, GetTripRequest, GetTripResponse, TripModel } from '../models';
+import { PostTripRequest, PostTripResponse, GetTripRequest, TripModel } from '../models';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -17,7 +17,7 @@ export class TripService {
     return this.http.post<PostTripResponse>(this.tripUrl, req);
   }
 
-  get(req: GetTripRequest): Observable<GetTripResponse> {
-    return this.http.get<GetTripResponse>(`${this.tripsUrl}?to=${req.to}&from=${req.from}`);
+  get(req: GetTripRequest): Observable<TripModel[]> {
+    return this.http.get<TripModel[]>(`${this.tripsUrl}?to=${req.to}&from=${req.from}`);
   }
 }

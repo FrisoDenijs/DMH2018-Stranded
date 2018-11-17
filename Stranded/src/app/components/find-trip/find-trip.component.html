@@ -1,4 +1,4 @@
-<div *ngFor="let trip of trips">
+<button *ngFor="let trip of trips" (click)="showJoin(trip)">
   <div>
       <span>{{ trip?.type }}</span>
       <span>by {{trip?.name}}</span>
@@ -8,4 +8,5 @@
     <span>{{ trip?.start_time | date:'hh:mm' }} - {{ trip?.end_date | date:'hh:mm' }}</span>
     <span>{{ trip?.seats }}</span>
   </div>
-</div>
+  <app-join-trip *ngIf="trip?.id === showTripId" [trip]="trip"></app-join-trip>
+</button>

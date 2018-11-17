@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TripService, TravelTimeService } from '../../shared/services';
 import { GetTripRequest, TripModel, TravelTimeRequest } from '../../shared/models';
 
@@ -15,8 +15,13 @@ export class FindTripComponent implements OnInit {
   @Input()
   public to: string;
 
+  @Output()
+  public joinTrip = new EventEmitter<TripModel>();
+
   public trips: TripModel[];
   public travelTime: number;
+
+  public showTripId = -1;
 
   constructor(private tripService: TripService, private travelTimeService: TravelTimeService) { }
 
@@ -31,24 +36,30 @@ export class FindTripComponent implements OnInit {
       }
 
       this.trips = res;
+
+      this.travelTimeService.get(timeReq).subscribe(res => {
+        console.log(res);
+        this.travelTime = res.travelTimeInSeconds;
+
+        // set end times
+        for (const trip of this.trips) {
+          const endDate = new Date(trip.start_time);
+          endDate.setSeconds(endDate.getSeconds() + res.travelTimeInSeconds);
+          trip.end_date = endDate;
+        }
+      });
     });
 
     const timeReq = new TravelTimeRequest();
     timeReq.from = !!this.from ? this.from : 'Leiden Centraal';
     timeReq.to = !!this.to ? this.to : 'Schiphol';
-
-
-    this.travelTimeService.get(timeReq).subscribe(res => {
-      console.log(res);
-      this.travelTime = res.travelTimeInSeconds;
-
-      // set end times
-      for (const trip of this.trips) {
-        const endDate = new Date(trip.start_time);
-        endDate.setSeconds(endDate.getSeconds() + res.travelTimeInSeconds);
-        trip.end_date = endDate;
-      }
-    });
   }
 
+  onJoinTrip(trip: TripModel) {
+    this.joinTrip.emit(trip);
+  }
+
+  showJoin(trip: TripModel) {
+    this.showTripId = trip.id;
+  }
 }

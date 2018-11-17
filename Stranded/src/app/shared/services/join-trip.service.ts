@@ -16,7 +16,7 @@ export class JoinTripService {
     return this.http.post<PostJoinTripResponse>(this.joinTripUrl, req);
   }
 
-  get(req: GetJoinTripRequest): Observable<GetJoinTripResponse> {
-    return this.http.get<GetJoinTripResponse>(`${this.joinTripUrl}?trip=${req.tripId}`);
+  get(req: GetJoinTripRequest): Observable<JoinTripModel[]> {
+    return this.http.get<JoinTripModel[]>(`${this.joinTripUrl}?trip=${req.tripId}`);
   }
 }

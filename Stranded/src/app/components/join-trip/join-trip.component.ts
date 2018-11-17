@@ -21,6 +21,8 @@ export class JoinTripComponent implements OnInit {
   public joinTrip = new EventEmitter<TripModel>();
 
   ngOnInit() {
+    this.header = this.trip.type === 'sharedcar' ? 'Shared car' : 'Shared taxi';
+
     const req = new GetJoinTripRequest();
 
     req.tripId = this.trip.id;

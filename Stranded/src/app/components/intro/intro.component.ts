@@ -1,6 +1,5 @@
-import {Component, Injector, OnInit, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Injector, OnInit, Output, ViewChild} from '@angular/core';
 import {DisruptionsService} from '../../shared/services';
-import {AppComponent} from '../../app.component';
 
 const SOURCE_STATION = 'Leiden Centraal';
 
@@ -13,7 +12,10 @@ export class IntroComponent implements OnInit {
 
   reason: String;
 
-  constructor(private disruptionService: DisruptionsService, private inj: Injector) {
+  @Output()
+  public goNext = new EventEmitter<string>();
+
+  constructor(private disruptionService: DisruptionsService) {
   }
 
   ngOnInit() {
@@ -28,7 +30,7 @@ export class IntroComponent implements OnInit {
   }
 
   clickNext() {
-    this.inj.get(AppComponent).showHome = true;
+    this.goNext.emit();
   }
 
 }

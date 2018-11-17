@@ -11,8 +11,13 @@ export class AppComponent {
   toStation: string;
 
   showIntro = true;
-  showHome = true;
+  showHome = false;
   showFindTrip = false;
+
+  toHome() {
+    this.showIntro = false;
+    this.showHome = true;
+  }
 
   toStationListener(station: string) {
     this.toStation = station;

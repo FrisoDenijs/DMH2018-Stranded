@@ -1,12 +1,16 @@
-<button *ngFor="let trip of trips" (click)="showJoin(trip)">
-  <div>
-      <span>{{ trip?.type }} </span>
-      <span>by {{trip?.name}}</span>
-  </div>
 
-  <div>
-    <span>{{ trip?.start_time | date:'hh:mm' }} - {{ trip?.end_date | date:'hh:mm' }}</span>
-    <span>{{ trip?.seats }}</span>
-  </div>
-  <app-join-trip *ngIf="trip?.id === showTripId" [trip]="trip"></app-join-trip>
-</button>
+<div class="container">
+  <button *ngFor="let trip of trips" class="trip-item" (click)="showJoin(trip)">
+
+    <div class="trip-left">
+      <div class="trip-title">{{ trip?.type }}</div>
+      <div class="trip-name">by {{trip?.name}}</div>
+    </div>
+
+    <div class="trip-right">
+      <div class="times">{{ trip?.start_time | date:'hh:mm' }} - {{ trip?.end_date | date:'hh:mm' }}</div>
+      <div class="seats">{{ trip?.seats_taken }} / {{ trip?.seats}} </div>
+    </div>
+    <app-join-trip *ngIf="trip?.id === showTripId" [trip]="trip"></app-join-trip>
+  </button>
+</div>

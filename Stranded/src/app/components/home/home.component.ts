@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { StationListService } from '../../shared/services/station-list.service';
 
 @Component({
@@ -368,6 +368,9 @@ export class HomeComponent implements OnInit {
     lat = 52.16611099;
     lng = 4.481666565;
 
+    @Output()
+    public stationFrom = new EventEmitter<string>();
+
     constructor(private stationListService: StationListService) {
     }
 
@@ -389,6 +392,9 @@ export class HomeComponent implements OnInit {
         }
         if (length === 0) {
             this.suggestions = [];
+        }
+        if (this.stations.indexof(this.input) > -1) {
+            this.stationFrom.emit(this.input);
         }
     }
 

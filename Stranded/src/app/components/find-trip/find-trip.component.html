@@ -1,0 +1,11 @@
+<div *ngFor="let trip of Trips">
+  <div>
+      <span>{{ trip?.type }}</span>
+      <span>by {{trip?.name}}</span>
+  </div>
+  
+  <div>
+    <span>{{ trip?.start_time | date:'hh:mm' }} - {{ (trip?.start_time.setSeconds(trip?.start_time.getSeconds() + traveTime)) | date:'hh:mm' }}</span>
+    <span>{{ trip?.seats }}</span>
+  </div>
+</div>

@@ -11,7 +11,7 @@ export class StationListService {
 
   constructor(private http: HttpClient) { }
 
-  get(): Observable<string> {
-    return this.http.get<string>(this.stationListUrl);
+  get(): Observable<string[]> {
+    return this.http.get<string[]>(this.stationListUrl);
   }
 }

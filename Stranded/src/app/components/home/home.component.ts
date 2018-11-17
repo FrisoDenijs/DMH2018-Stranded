@@ -362,14 +362,14 @@ export class HomeComponent implements OnInit {
     }
     ];
 
-    stations;
+    stations: string[];
     suggestions = [];
-    input;
+    input: string;
     lat = 52.16611099;
     lng = 4.481666565;
 
     @Output()
-    public stationFrom = new EventEmitter<string>();
+    public stationTo = new EventEmitter<string>();
 
     constructor(private stationListService: StationListService) {
     }
@@ -394,8 +394,8 @@ export class HomeComponent implements OnInit {
         if (length === 0) {
             this.suggestions = [];
         }
-        if (this.stations.indexof(this.input) > -1) {
-            this.stationFrom.emit(this.input);
+        if (this.stations.includes(this.input)) {
+            this.stationTo.emit(this.input);
         }
     }
 }

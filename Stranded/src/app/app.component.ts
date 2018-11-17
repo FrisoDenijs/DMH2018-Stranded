@@ -10,7 +10,8 @@ export class AppComponent {
 
   toStation: string;
 
-  showHome = false;
+  showIntro = true;
+  showHome = true;
   showFindTrip = false;
 
   toStationListener(station: string) {

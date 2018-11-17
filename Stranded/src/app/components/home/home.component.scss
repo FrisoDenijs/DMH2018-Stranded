@@ -1,0 +1,38 @@
+agm-map {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.home-container {
+  width: 100%;
+  height: 100%;
+  // background-color: red;
+  position: absolute;
+  top: 60px;
+}
+
+.home-input {
+  width: 85%;
+  float: none;
+  margin: 0 auto;
+  display: block;
+  margin-top: 60px;
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+.home-station-box {
+  width: 85%;
+  height: auto;
+  float: none;
+  margin: 0 auto;
+}
+
+.home-station {
+  width: 100%;
+  height: auto;
+  font-size: 15px;
+  background-color: red;
+  padding: 15px 20px;
+}

@@ -6,10 +6,11 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { AcceptJoinService, DisruptionsService, JoinTripService, TripService, BarsService } from './shared/services';
+import { AcceptJoinService, DisruptionsService, JoinTripService, TripService, BarsService, TravelTimeService } from './shared/services';
 
 import { HeaderComponent } from './components/header/header.component';
 import { AgmCoreModule } from '@agm/core';
+import { StationInfoService } from './shared/services/station-info.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { AgmCoreModule } from '@agm/core';
     DisruptionsService,
     JoinTripService,
     TripService,
-    BarsService
+    BarsService,
+    StationInfoService,
+    TravelTimeService
   ],
   bootstrap: [AppComponent]
 })

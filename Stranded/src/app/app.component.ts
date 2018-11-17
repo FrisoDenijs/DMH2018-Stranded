@@ -6,10 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Stranded';
+
 
   toStation: string;
 
+  showHeader = false;
+  showIntro = true;
   showHome = false;
   showFindTrip = false;
 
@@ -17,5 +19,11 @@ export class AppComponent {
     this.toStation = station;
     this.showHome = false;
     this.showFindTrip = true;
+  }
+
+  clickIntro() {
+    this.showIntro = false;
+    this.showHeader = true;
+    this.showHome = true;
   }
 }

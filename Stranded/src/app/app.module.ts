@@ -11,8 +11,6 @@ import { AcceptJoinService, DisruptionsService, JoinTripService, TripService, Ba
 import { HeaderComponent } from './components/header/header.component';
 import { AgmCoreModule } from '@agm/core';
 
->>>>>>> cbcce9d4bc17961df444286240a09b45382909a9
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +22,6 @@ import { AgmCoreModule } from '@agm/core';
     HttpClientModule,
     CommonModule,
     FormsModule,
-    // TestServicesComponent,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDdbKZx0W0EImCoqZylEnPpG01O4DC3JR4'
     })
